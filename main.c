@@ -17,21 +17,6 @@ static void usage(char *program)
     exit(1);
 }
 
-char *tokstr[] = {"+", "-", "*", "/", "intlit"};
-
-static void scanfile()
-{
-    struct token T;
-
-    while (scan(&T))
-    {
-        printf("Token %s", tokstr[T.token]);
-        if (T.token == T_INTLIT)
-            printf(". value %d", T.intvalue);
-        printf("\n");
-    }
-}
-
 void main(int argc, char const *argv[])
 {
 

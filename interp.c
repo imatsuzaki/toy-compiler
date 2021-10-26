@@ -15,10 +15,10 @@ int interpretAST(struct ASTnode *n)
         rightval = interpretAST(n->right);
 
     // ただのdebug print
-    if (n->op == A_INTLIT)
-        printf("int %d\n", n->intvalue);
-    else
-        printf("%d %s %d\n", lefval, ASTop[n->op], rightval);
+    // if (n->op == A_INTLIT)
+    //     printf("int %d\n", n->intvalue);
+    // else
+    //     printf("%d %s %d\n", lefval, ASTop[n->op], rightval);
 
     switch (n->op)
     {

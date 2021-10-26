@@ -1,4 +1,5 @@
 .vscode*
+a.out
 
 # Assmebly code and tmp object
 *.s

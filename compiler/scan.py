@@ -1,5 +1,6 @@
 from pathlib import Path
 from re import T
+
 from .token import Token, TokenType
 
 

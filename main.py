@@ -1,7 +1,9 @@
 import sys
+from pathlib import Path
 
 from compiler import scan
-from pathlib import Path
+from compiler.expr import binary_expr
+from compiler.interpreter import interpreter
 
 
 def main():
@@ -10,8 +12,8 @@ def main():
         raise Exception(f"Number of input args are wrong: {len(args)}")
 
     tokens = scan.scan(Path(args[1]))
-    for t in tokens:
-        print(t)
+    node = binary_expr(tokens)
+    print(interpreter(node))
 
 
 if __name__ == "__main__":

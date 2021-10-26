@@ -34,6 +34,9 @@ static void scanfile()
 
 void main(int argc, char const *argv[])
 {
+
+    struct ASTnode *n;
+
     if (argc != 2)
     {
         usage(argv[0]);
@@ -47,7 +50,8 @@ void main(int argc, char const *argv[])
         exit(1);
     }
 
-    scanfile();
-
+    scan(&Token);
+    n = binexpr();
+    printf("%d\n", interpretAST(n));
     exit(0);
 }

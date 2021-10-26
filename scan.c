@@ -64,6 +64,9 @@ static int scanint(int c)
     return val;
 }
 
+// 空白の場合はスキップ
+// +, *, -, /の場合はtokenを返す
+// 数字の場合はtokenを返しその中にint valueが入ってる
 int scan(struct token *t)
 {
     int c;
@@ -74,6 +77,7 @@ int scan(struct token *t)
     switch (c)
     {
     case EOF:
+        t->token = T_EOF;
         return 0;
     case '+':
         t->token = T_PLUS;
